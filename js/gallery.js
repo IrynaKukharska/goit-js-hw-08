@@ -86,15 +86,15 @@ createProducts(images);
 gallery.addEventListener("click", openModal);
 
 function openModal(event) {
+  event.preventDefault();
   if (event.target === event.currentTarget) {
     return;
   }
-
   const imageSource = event.target.dataset.source;
   const imageDescription = event.target.alt;
 
   const instance = basicLightbox.create(`
-   <img src="${imageSource}" width="800" height="600" alt="${imageDescription}">
+   <img src="${imageSource}" width="700" height="500" alt="${imageDescription}">
 `);
   instance.show();
 }
